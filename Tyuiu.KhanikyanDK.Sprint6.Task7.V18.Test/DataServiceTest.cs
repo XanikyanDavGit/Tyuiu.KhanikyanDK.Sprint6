@@ -103,7 +103,7 @@ namespace Tyuiu.KhanikyanDK.Sprint6.Task7.V18.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(ArgumentException))] 
         public void TestGetMatrixNotEnoughColumns()
         {
             DataService ds = new DataService();
