@@ -25,7 +25,7 @@ namespace Tyuiu.KhanikyanDK.Sprint6.Task1.V17
 
                 StringBuilder sb = new StringBuilder();
                 sb.AppendLine("Таблица значений функции:");
-                sb.AppendLine("f(x) = (3x - 1.5/sin(x) - 3 + x) + 2");
+                sb.AppendLine("f(x) = ((3x - 1.5) / (sin(x) - 3 + x)) + 2");
                 sb.AppendLine("на диапазоне [-5; 5] с шагом 1");
                 sb.AppendLine();
 
@@ -42,7 +42,6 @@ namespace Tyuiu.KhanikyanDK.Sprint6.Task1.V17
                 MessageBox.Show("Ошибка: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void buttonInfo_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Таск 1 Sprint6, вариант 17 выполнен студентом Ханикян Давит Каренович, ИИПБ-23-1", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);

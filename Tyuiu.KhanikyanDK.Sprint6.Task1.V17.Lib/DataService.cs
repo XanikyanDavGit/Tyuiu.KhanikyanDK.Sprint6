@@ -14,21 +14,18 @@ namespace Tyuiu.KhanikyanDK.Sprint6.Task1.V17.Lib
             {
                 double x = startValue + i;
 
-                // Проверка деления на ноль: sin(x) не должен быть равен 0
-                double sinX = Math.Sin(x);
+                // Формула: f(x) = ((3x - 1.5) / (sin(x) - 3 + x)) + 2
+                // Проверка знаменателя: sin(x) - 3 + x
+                double denominator = Math.Sin(x) - 3 + x;
 
-                if (Math.Abs(sinX) < 1e-10) // Защита от деления на ноль
+                if (Math.Abs(denominator) < 1e-10) // Защита от деления на ноль
                 {
                     arr[i] = 0;
                 }
                 else
                 {
-                    // Вычисление по формуле: f(x) = (3x - 1.5/sin(x) - 3 + x) + 2
-                    // Упрощаем: f(x) = 3x + x - 1.5/sin(x) - 3 + 2 = 4x - 1.5/sin(x) - 1
-                    double term1 = 4 * x;
-                    double term2 = 1.5 / sinX;
-                    double result = term1 - term2 - 1;
-
+                    double numerator = 3 * x - 1.5;
+                    double result = (numerator / denominator) + 2;
                     arr[i] = Math.Round(result, 2);
                 }
             }
