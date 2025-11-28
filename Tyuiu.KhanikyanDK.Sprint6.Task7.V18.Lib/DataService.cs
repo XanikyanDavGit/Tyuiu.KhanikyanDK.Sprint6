@@ -18,8 +18,11 @@ namespace Tyuiu.KhanikyanDK.Sprint6.Task7.V18.Lib
             if (lines.Length == 0)
                 throw new ArgumentException("Файл пуст");
 
+            // Определяем разделитель - проверяем первую строку
+            char separator = DetermineSeparator(lines[0]);
+
             // Определяем размерность матрицы по первой строке
-            string[] firstLineValues = lines[0].Split(',');
+            string[] firstLineValues = lines[0].Split(separator);
             int rows = lines.Length;
             int cols = firstLineValues.Length;
 
@@ -32,7 +35,7 @@ namespace Tyuiu.KhanikyanDK.Sprint6.Task7.V18.Lib
                 if (string.IsNullOrEmpty(line))
                     continue;
 
-                string[] values = line.Split(',');
+                string[] values = line.Split(separator);
 
                 if (values.Length != cols)
                     throw new ArgumentException($"Несовпадение количества столбцов в строке {i + 1}. Ожидалось: {cols}, получено: {values.Length}");
@@ -70,6 +73,19 @@ namespace Tyuiu.KhanikyanDK.Sprint6.Task7.V18.Lib
             }
 
             return matrix;
+        }
+
+        private char DetermineSeparator(string line)
+        {
+            // Определяем разделитель по первой строке
+            if (line.Contains(';'))
+                return ';';
+            else if (line.Contains(','))
+                return ',';
+            else if (line.Contains('\t'))
+                return '\t';
+            else
+                throw new ArgumentException("Не удалось определить разделитель в файле");
         }
     }
 }
