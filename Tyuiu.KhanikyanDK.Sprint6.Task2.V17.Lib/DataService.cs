@@ -1,6 +1,5 @@
 ﻿using System;
 using tyuiu.cources.programming.interfaces.Sprint6;
-using Tyuiu.Cources.Programming.Interfaces.Sprint6;
 
 namespace Tyuiu.KhanikyanDK.Sprint6.Task2.V17.Lib
 {
